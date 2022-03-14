@@ -1,16 +1,36 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Phone from '../../img/phone.png';
 import Email from '../../img/email.png';
 import emailjs from '@emailjs/browser';
-import { ContactContainer, ContactBackground, ContactLeft, ContactRight, ContactWrapper, ContactTitle, ContactInfo, ContactInfoItem, ContactIcon, ContactDescription, ContactText, ContactForm } from './contact.styles';
+import { ContactContainer, ContactWrapper, ContactTitle, ContactSubTitle, ContactDescription, ContactForm, ContactFromAddressInput } from './contact.styles';
+import CustomInput from '../customInput/CustomInput.component';
+import CustomButton from '../customButton/CustomButton.component';
 
 const Contact = () => {
 
+    const contactRef = useRef();
     const formRef = useRef();
+
+    const [contactPosition, setContactPosition] = useState(Infinity);
+    const [contactVisibility, setContactVisibility] = useState(0);
+
+    const handleScroll = useCallback(async e => {
+        const contactElement = contactRef.current;
+        const contactPosition = contactElement.getClientRects()[0].y
+        setContactPosition(contactPosition);
+    },[]);
+
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll);
+        if (!contactVisibility && window.innerHeight * 0.4  >= contactPosition) {
+            setContactVisibility(1);
+        }
+
+        return () => window.removeEventListener('scroll', handleScroll);        
+    },[handleScroll, contactPosition, contactVisibility])
 
     const handleSubmit = e => {
         e.preventDefault();
-
         emailjs.sendForm('service_o87fd5o', 'template_2osshgr', formRef.current, 'ORS6nvw8z6wahaGhq')
         .then((result) => {
             console.log(result.text);
@@ -20,33 +40,21 @@ const Contact = () => {
     }
 
     return (
-        <ContactContainer>
-            <ContactBackground/>
-            <ContactWrapper>
-                <ContactLeft>
-                    <ContactTitle>Get in touch</ContactTitle>
-                    <ContactInfo>
-                        <ContactInfoItem>
-                            <ContactIcon src={Phone} alt=''/>+36 50 106 4146
-                        </ContactInfoItem>
-                        <ContactInfoItem>
-                            <ContactIcon src={Email} alt=''/>boros.attila.tamas@gmail.com
-                        </ContactInfoItem>
-                    </ContactInfo>
-                </ContactLeft>
-                <ContactRight>
-                    <ContactDescription>
-                        <ContactText><b>Leave me a message</b></ContactText>
-                        <ContactText>I'm open for job possibilities if the right project/company comes along. I'll reply every message as soon as possible. Even if you have a hobby project that you need some help with, feel free to contact me.</ContactText>
-                    </ContactDescription>
-                    <ContactForm ref={formRef} onSubmit={handleSubmit}>
-                        <input type='text' placeholder='Name' name='user_name'></input>
-                        <input type='text' placeholder='Subject' name='user_subject'></input>
-                        <input type='email' placeholder='Email' name='user_email'></input>
-                        <textarea rows="5" name='message'></textarea>
-                        <button>Submit</button>
-                    </ContactForm>
-                </ContactRight>            
+        <ContactContainer ref={contactRef} id='contact'>
+            <ContactWrapper visibility={contactVisibility}>
+                <ContactDescription>
+                    <ContactTitle>CONTACT</ContactTitle>
+                    <ContactSubTitle>I am available to work on your projects and bring your ideas to life. I am just a click away.</ContactSubTitle>
+                </ContactDescription>
+                <ContactForm ref={formRef} onSubmit={handleSubmit}>
+                    <ContactFromAddressInput>
+                        <CustomInput type='text' name='user_name' label='Your Name'></CustomInput>
+                        <CustomInput type='email' name='user_email' label='Your Email'></CustomInput>
+                        <CustomInput type='text' name='user_subject' label='Subject'></CustomInput>
+                    </ContactFromAddressInput>
+                    <CustomInput type='textarea' name='user_text' label='Your Message'></CustomInput>
+                    <CustomButton>Submit</CustomButton>
+                </ContactForm>      
             </ContactWrapper>
         </ContactContainer>
     )

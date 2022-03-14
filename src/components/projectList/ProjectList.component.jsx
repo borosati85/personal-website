@@ -1,21 +1,45 @@
-import React from 'react';
-import './projectList.styles.css';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ProjectCard from '../projectCard/ProjectCard.component'
-import projects from '../../common/data';
+import { projects } from '../../common/data';
+import { ProjectListContainer, ProjectListWrapper, ProjectListTextContainer, ProjectListTitle, ProjectListSubTitle, ListContainer } from './projectList.styles';
 
 const ProjectList = () => {
+
+    const projectsRef = useRef();
+
+    const [projectsPosition, setProjectsPosition] = useState(Infinity);
+    const [projectsVisibility, setProjectsVisibility] = useState(0);
+
+    const handleScroll = useCallback(async e => {
+
+        const projectsElement = projectsRef.current;
+        const projectsPosition = projectsElement.getClientRects()[0].y
+        setProjectsPosition(projectsPosition);
+    },[]);
+
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll);
+        if (!projectsVisibility && window.innerHeight * 0.4  >= projectsPosition) {
+            setProjectsVisibility(1);
+        }
+
+        return () => window.removeEventListener('scroll', handleScroll);        
+    },[handleScroll, projectsPosition, projectsVisibility])
+
     return (
-        <div className='project-list'>
-            <div className='project-list-texts'>
-                <h2 className='project-list-title'>Projects</h2>
-                <p className='project-list-description'>Here is some projects I made, check them out</p>
-            </div>
-            <div className='list'>
-                {
-                    projects.map(({id, ...otherProps}) => <ProjectCard key={id} {...otherProps}/>)
-                }
-            </div>
-        </div>
+        <ProjectListContainer ref={projectsRef} id='projects'>
+            <ProjectListWrapper visibility={projectsVisibility}>
+                <ProjectListTextContainer>
+                    <ProjectListTitle>WORK</ProjectListTitle>
+                    <ProjectListSubTitle>A selection of stuff that I've built</ProjectListSubTitle>
+                </ProjectListTextContainer>
+                <ListContainer>
+                    {
+                        projects.map(({id, ...otherProps},) => <ProjectCard key={id} {...otherProps}/>)
+                    }
+                </ListContainer>
+            </ProjectListWrapper>
+        </ProjectListContainer>
     )
 }
 

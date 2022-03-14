@@ -1,18 +1,17 @@
 import React from 'react';
-import './projectCard.styles.css';
+import { ProjectCardContainer, ProjectCardWrapper, ProjectCardTitle, ProjectCardDescription, ProjectCardTechnologiesContainer, ProjectCardTechnology } from './project.card.styles';
 
-const ProjectCard = ({ image, url }) => {
+const ProjectCard = ({ title, description, technologies, url }) => {
     return (
-        <div className='project-card'>
-            <div className='project-card-browser'>
-                <div className='circle'></div>
-                <div className='circle'></div>
-                <div className='circle'></div>
-            </div>
-            <a className='project-card-link' href={url} target='_blank' rel='noreferrer'>
-                <img className='project-card-image' src={image} alt=''></img>
-            </a>        
-        </div>
+        <ProjectCardContainer href={url} target='_blank' rel='noreferrer'>
+            <ProjectCardWrapper>
+                <ProjectCardTitle>{title}</ProjectCardTitle>
+                <ProjectCardDescription>{description}</ProjectCardDescription>
+                <ProjectCardTechnologiesContainer>
+                    {technologies.map((item, idx) => <ProjectCardTechnology key={idx}>{item}</ProjectCardTechnology>)}
+                </ProjectCardTechnologiesContainer>
+            </ProjectCardWrapper>
+        </ProjectCardContainer>
     )
 }
 

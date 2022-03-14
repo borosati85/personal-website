@@ -1,49 +1,50 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { device } from '../../common/breakpoints';
 
-export const ContactContainer = styled.div`    
-    position: relative;
+const setVisibility = ({visibility}) => visibility ? 'display: block' : null
 
-    @media only screen and ${device.m} {
-    }
+const FadeDownKeyframes = keyframes`
+0% {
+    transform: translateY(-80px);
+    opacity: 0;
+}
+
+100% {
+    transform: translateY(0);
+    opacity: 1;
+}
+`;
+
+const FadeDownAnimation = css`
+    opacity: 0;
+    animation-name: ${FadeDownKeyframes};
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-timing: cubic-bezier(0.390, 0.575, 0.565, 1.000);
 `
 
-export const ContactBackground = styled.div`
-    height: 100%;
-    width: 30px;
-    position: absolute;
-    background-color: #59b256;
+export const ContactContainer = styled.div`   
+    min-height: 100vh;
+    padding: 50px 0;
 `
 
 export const ContactWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;  
-    padding: 30px;
-    min-height: 100vh;
+    display: none;
+    height: 100%; 
+    ${setVisibility};
+    ${FadeDownAnimation};
 
-    @media only screen and ${device.lg} {
-        flex-direction: row;
-    }
-`
-
-export const ContactLeft = styled.div`
-    flex: 1;  
-    display: flex;
-    flex-direction: column;     
-    align-items: center;
 `
 
 export const ContactTitle = styled.h2`
-    font-size: 60px;
-    margin-top: 0px;
+    font-size: 15px;
+    text-align: left;
 `
 
-export const ContactRight = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+export const ContactSubTitle = styled.h3`
+    font-size: 30px;
+    text-align: left;
+    font-weight: 200;
 `
 
 export const ContactInfo = styled.div``
@@ -61,69 +62,28 @@ export const ContactIcon = styled.img`
 `
 
 export const ContactDescription = styled.div`
-    width: 100%;
-
-    @media only screen and ${device.sm} {
-        width: 80%
-    }
-
-    @media only screen and ${device.m} {
-        width: 65%
-    }
-
-    @media only screen and ${device.lg} {
-        width: 50%
-    }
-    
 `
 
 export const ContactText = styled.p``
 
 export const ContactForm = styled.form`
+    margin-top: 100px;    
+
+    button {
+        margin-top: 30px;
+    }
+`
+
+export const ContactFromAddressInput = styled.div`
     width: 100%;
-    margin-top: 20px;    
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 50px;
 
-    input, button, textarea {
-        width: 100%;
-
-        @media only screen and ${device.sm} {
-            width: 80%
-        }
-
-        @media only screen and ${device.m} {
-            width: 65%
-        }
-
-        @media only screen and ${device.lg} {
-            width: 50%
-        }
-    }
-    
-    input, button {    
-        height: 50px;
+    @media only screen and ${device.m} {
+        flex-direction: row;
     }
 
-    textarea {
-        height: 200px;
-    }
-    
-    input {
-        padding-left: 10px;
-        border: none;
-        border-bottom: 2px solid rgb(215, 215, 215);
-    }
-    
-    button {
-        border: none;
-        padding: 15px;
-        cursor: pointer;
-        background-color: #59b256;
-        color: white;
-        font-weight: 600;
-    }
 `
 

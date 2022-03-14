@@ -1,34 +1,32 @@
 const projects = [
     {
         id: 1,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
+        title: 'e-Commerce App',
+        description: 'A small webshop I made for a friend, to help him selling his honey products online. Front-end is created with React, used Redux-Sagas for state management. Backend is provided by FireBase, online payments by Stripe.',
+        url: 'https://github.com/borosati85/project-honey',
+        technologies:['react','redux', 'firebase', 'stripe']
     },
     {
         id: 2,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
+        title: 'Face Recognition App',
+        description: 'A face recognition app, using the power of face-api-js, and React.',
+        url: 'https://borosati85.github.io/face-app/',
+        technologies:['react', 'face-api-js']
     },
     {
         id: 3,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
+        title: 'Contacts App',
+        description: 'A fun little app, with endless random users generated with random-data-api.com and robohash.com. Created with React and used Redux-Sagas for state management.',
+        url: 'https://borosati85.github.io/cat-contacts/',
+        technologies:['react', 'redux', 'random-data-api.com', 'robohash.com']
     },
     {
         id: 4,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
-    },
-    {
-        id: 5,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
-    },
-    {
-        id: 6,
-        image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        url: 'http://lama.dev',
+        title: 'Gradient Background Generator',
+        description: 'A simple application that helps select the right gradient background combination. Created with HTML, CSS, and Javascript.',
+        url: 'https://borosati85.github.io/background-generator/',
+        technologies:['HTML', 'CSS', 'JavaScript']
     }
-]
+];
 
-export default projects;
+export { projects };
