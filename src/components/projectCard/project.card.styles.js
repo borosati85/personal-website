@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { device } from '../../common/breakpoints';
+
+const darkModeStyles = css`
+    color: #DDD;
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+`
+
+const applyTheme = ({ darkMode }) => {
+    return darkMode ? darkModeStyles : null
+}
 
 export const ProjectCardContainer = styled.a`    
     height: 280px;    
@@ -8,6 +17,7 @@ export const ProjectCardContainer = styled.a`
     border-radius: 25px;
     box-shadow: 3px 3px 10px rgb(215,215,215);
     color: #333;
+    ${applyTheme};
     transition: transform 0.5s;
 
     &:hover {

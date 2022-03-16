@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context';
 import { CustomInputFormContainer, CustomInputContainer, CustomInputLabel, CustomTextAreaLabel, CustomTextAreaContainer } from './customInput.styles'
 
 const CustomInput = ({ name, type, label, rows }) => {
     const [focused, setFocused] = useState(false);
     const [value, setValue] = useState('');
 
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <CustomInputFormContainer>
+        <CustomInputFormContainer >
             {
                 type==='textarea'
                 ? 
@@ -25,6 +30,7 @@ const CustomInput = ({ name, type, label, rows }) => {
                     name={name}
                     type={type}
                     rows='5'
+                    darkMode={darkMode}
                     >                    
                 </CustomTextAreaContainer>
                 </>
@@ -42,7 +48,9 @@ const CustomInput = ({ name, type, label, rows }) => {
                     onBlur={()=> setFocused(false)}
                     onChange={e=> setValue(e.target.value)}
                     name={name}
-                    type={type}>
+                    type={type}
+                    darkMode={darkMode}
+                    >                        
                 </CustomInputContainer>
                 </>
             }

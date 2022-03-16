@@ -28,18 +28,31 @@ const commonLabelStyles = css`
     transition: all 0.3s;
 `
 
+const darkModeStyles = css`
+    background-color: #333;
+    color: #DDD;
+`
+
+const applyTheme = ({ darkMode }) => {
+    return darkMode ? darkModeStyles : null
+}
+
 export const CustomInputFormContainer = styled.div`
     position: relative;
     width: 100%;
 `
 
-export const CustomInputContainer = styled.input`    
-    ${commonInputStyles}
+export const CustomInputContainer = styled.input`  
+    color: #333;
+    ${commonInputStyles};
+    ${applyTheme};
     height: 50px;
 `
 
-export const CustomTextAreaContainer = styled.textarea`    
-    ${commonInputStyles}
+export const CustomTextAreaContainer = styled.textarea`   
+    color: #333; 
+    ${commonInputStyles};
+    ${applyTheme};
     padding-top: 90px;
     height: 120px;
 `

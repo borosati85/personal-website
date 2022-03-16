@@ -41,6 +41,14 @@ export const SkillIconsWrapper = styled.div`
 
 `
 
+const darkModeStyles = css`
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+`
+
+const applyTheme = ({ darkMode }) => {
+    return darkMode ? darkModeStyles : null
+}
+
 export const Icon = styled.div`
     width: 150px;
     display: flex;
@@ -51,6 +59,7 @@ export const Icon = styled.div`
     box-shadow: 0px 0px 10px rgb(215,215,215);
     user-select: none;
     transition: all 0.2s;
+    ${applyTheme};
 
     &:hover {
         transform: scale(1.05);

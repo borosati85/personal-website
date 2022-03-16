@@ -10,16 +10,16 @@ import { ThemeContext } from './context.js';
 const App = () => {
 
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkmode;
+  const darkMode = theme.state.darkMode;
 
   return (
-    <AppContainer>
+    <AppContainer darkMode={darkMode}>
       <AppWrapper>
-        <Navbar />
+        <Navbar darkMode={darkMode}/>
         <Introduction />
-        <About />
-        <ProjectList />
-        <Contact />
+        <About darkMode={darkMode} />
+        <ProjectList darkMode={darkMode} />
+        <Contact darkMode={darkMode} />
       </AppWrapper>
     </AppContainer>
   );

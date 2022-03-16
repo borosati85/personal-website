@@ -10,49 +10,55 @@ import firebase from '../../img/firebase.png';
 import responsive from '../../img/responsive.png';
 import github from '../../img/github.png';
 import { SkillIconsContainer, SkillIconsWrapper, Icon, Image, Description } from "./skillicon.styles";
+import { ThemeContext } from "../../context";
+import { useContext } from "react";
 
 
 const SkillIcons = ({ visibility }) => {
+
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <SkillIconsContainer visibility={visibility}>
+        <SkillIconsContainer visibility={visibility} >
             <SkillIconsWrapper>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={html} alt=''></Image>
                     <Description>HTML5</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={css} alt=''></Image>
                     <Description>CSS3</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={js} alt=''></Image>
                     <Description>JavaScript</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={react} alt=''></Image>
                     <Description>React</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={redux} alt=''></Image>
                     <Description>Redux</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={typescript} alt=''></Image>
                     <Description>TypeScript</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={node} alt=''></Image>
                     <Description>Node.js</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={firebase} alt=''></Image>
                     <Description>Firebase</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={responsive} alt=''></Image>
                     <Description>Responsive Design</Description>
                 </Icon>
-                <Icon>
+                <Icon darkMode={darkMode}>
                     <Image src={github} alt=''></Image>
                     <Description>GitHub</Description>
                 </Icon>
