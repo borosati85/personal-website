@@ -4,8 +4,14 @@ import Introduction from './components/introduction/Introduction.component';
 import About from './components/about/About.component';
 import ProjectList from './components/projectList/ProjectList.component';
 import Contact from './components/contact/Contact.component';
+import { useContext } from 'react';
+import { ThemeContext } from './context.js';
 
 const App = () => {
+
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkmode;
+
   return (
     <AppContainer>
       <AppWrapper>

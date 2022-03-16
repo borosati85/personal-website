@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavbarContainer, NavigationList, HamburgerMenuContainer, NavListItem } from './navbar.styles';
+import Toggle from '../toggle/Toggle.component';
 
 const Navbar = () => {
     return ( 
@@ -9,6 +10,7 @@ const Navbar = () => {
             <NavListItem><a href='#about'>About</a></NavListItem>
             <NavListItem><a href='#projects'>Work</a></NavListItem>
             <NavListItem><a href='#contact'>Contact</a></NavListItem>
+            <NavListItem><Toggle/></NavListItem>
         </NavigationList>
         <HamburgerMenuContainer>
             <div></div>
