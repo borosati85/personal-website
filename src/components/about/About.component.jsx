@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import SkillIcons from '../skillicons/SkillIcons.component';
-import { AboutContainer, AboutWrapper, AboutTextContainer, SkillsContainer, AboutTitle, AboutSubTitle, AboutText  } from './about.styles';
+import { AboutContainer, AboutWrapper, AboutTextContainer, SkillsContainer, AboutTitle, AboutSubTitle, AboutText, BackgroundContainer  } from './about.styles';
 
 const About = () => {    
     const aboutRef = useRef();

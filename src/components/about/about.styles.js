@@ -1,15 +1,36 @@
 import styled, { css, keyframes } from 'styled-components';
+import { device } from '../../common/breakpoints';
 
 export const AboutContainer = styled.div`
     min-height: 100vh;
+    position: relative;
+    
+`
+
+export const BackgroundContainer = styled.div`
+    background-color: #3f9;
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
 `
 
 export const AboutWrapper = styled.div`
+    background-color: #3f9;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 50px 0;    
     gap: 15%;    
+    padding: 50px 2%;
+
+    @media only screen and ${device.lg} {
+        padding: 50px 10%;
+    }
+
+    @media only screen and ${device.xl} {
+        padding: 50px 20%;
+    }
 `
 
 export const AboutTextContainer = styled.div``

@@ -33,6 +33,15 @@ export const ContactWrapper = styled.div`
     height: 100%; 
     ${setVisibility};
     ${FadeDownAnimation};
+    padding: 50px 2%;
+
+    @media only screen and ${device.lg} {
+        padding: 50px 10%;
+    }
+
+    @media only screen and ${device.xl} {
+        padding: 50px 20%;
+    }
 
 `
 

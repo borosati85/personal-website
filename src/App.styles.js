@@ -17,17 +17,7 @@ export const AppContainer = styled.div`
     ${applyTheme};
 `
 
-export const AppWrapper = styled.div`
-    padding: 0 2%;
-
-    @media only screen and ${device.lg} {
-        padding: 0 10%;
-    }
-
-    @media only screen and ${device.xl} {
-        padding: 0 20%;
-    }
-`
+export const AppWrapper = styled.div``
 
 export const colorBackgroundPrimary = css``;
 export const colorBackgroundSecondary = css``;

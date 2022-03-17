@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import { device } from '../../common/breakpoints';
 
 const setVisibility = ({visibility}) => visibility ? 'display: block' : null
 
@@ -31,6 +32,16 @@ export const ProjectListWrapper = styled.div`
     display: none;
     ${setVisibility};
     ${FadeDownAnimation};
+
+    padding: 0 2%;
+
+    @media only screen and ${device.lg} {
+        padding: 0 10%;
+    }
+
+    @media only screen and ${device.xl} {
+        padding: 0 20%;
+    }
 `
 
 export const ProjectListTextContainer = styled.div`
