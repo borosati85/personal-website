@@ -1,7 +1,56 @@
-import styled, { keyframes, css } from 'styled-components';
-import { device } from '../../common/breakpoints';
+import styled, { keyframes, css } from "styled-components";
+import { device } from "../../common/breakpoints";
 
-const setVisibility = ({visibility}) => visibility ? 'display: block' : null
+const setVisibility = ({ visibility }) =>
+  visibility ? "display: block" : null;
+
+const lightModeColorStyles = css`
+  background-color: #fffffe;
+
+  h1,
+  h2 {
+    color: #094067;
+  }
+
+  p {
+    color: #5f6c7b;
+  }
+
+  button {
+    background-color: #3da9fc;
+    color: #fffffe;
+  }
+`;
+
+const darkModeColorStyles = css`
+  background-color: #16161a;
+
+  h2 {
+    color: #7f5af0;
+  }
+
+  h3 {
+    color: #fffffe;
+  }
+
+  p {
+    color: #94a1b2;
+  }
+
+  button {
+    background-color: #7f5af0;
+    color: #fffffe;
+  }
+
+  input,
+  textarea {
+    background-color: #16161a;
+  }
+`;
+
+const applyColorTheme = ({ darkMode }) => {
+  return darkMode ? darkModeColorStyles : lightModeColorStyles;
+};
 
 const FadeDownKeyframes = keyframes`
 0% {
@@ -16,83 +65,79 @@ const FadeDownKeyframes = keyframes`
 `;
 
 const FadeDownAnimation = css`
-    opacity: 0;
-    animation-name: ${FadeDownKeyframes};
-    animation-duration: 1.6s;
-    animation-fill-mode: forwards;
-    animation-timing: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-`
+  opacity: 0;
+  animation-name: ${FadeDownKeyframes};
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+  animation-timing: cubic-bezier(0.39, 0.575, 0.565, 1);
+`;
 
-export const ContactContainer = styled.div`   
-    min-height: 100vh;
-    padding: 50px 0;
-`
+export const ContactContainer = styled.div`
+  min-height: 100vh;
+  ${applyColorTheme}
+`;
 
 export const ContactWrapper = styled.div`
-    display: none;
-    height: 100%; 
-    ${setVisibility};
-    ${FadeDownAnimation};
-    padding: 50px 2%;
+  display: none;
+  height: 100%;
+  ${setVisibility};
+  ${FadeDownAnimation};
+  padding: 50px 2%;
 
-    @media only screen and ${device.lg} {
-        padding: 50px 10%;
-    }
+  @media only screen and ${device.lg} {
+    padding: 50px 10%;
+  }
 
-    @media only screen and ${device.xl} {
-        padding: 50px 20%;
-    }
-
-`
+  @media only screen and ${device.xl} {
+    padding: 50px 20%;
+  }
+`;
 
 export const ContactTitle = styled.h2`
-    font-size: 15px;
-    text-align: left;
-`
+  font-size: 15px;
+  text-align: left;
+`;
 
 export const ContactSubTitle = styled.h3`
-    font-size: 30px;
-    text-align: left;
-    font-weight: 200;
-`
+  font-size: 30px;
+  text-align: left;
+  font-weight: 200;
+`;
 
-export const ContactInfo = styled.div``
+export const ContactInfo = styled.div``;
 
 export const ContactInfoItem = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 50px 0px;
-`
+  display: flex;
+  align-items: center;
+  margin: 50px 0px;
+`;
 
 export const ContactIcon = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-`
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+`;
 
-export const ContactDescription = styled.div`
-`
+export const ContactDescription = styled.div``;
 
-export const ContactText = styled.p``
+export const ContactText = styled.p``;
 
 export const ContactForm = styled.form`
-    margin-top: 100px;    
+  margin-top: 100px;
 
-    button {
-        margin-top: 30px;
-    }
-`
+  button {
+    margin-top: 30px;
+  }
+`;
 
 export const ContactFromAddressInput = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 50px;
 
-    @media only screen and ${device.m} {
-        flex-direction: row;
-    }
-
-`
-
+  @media only screen and ${device.m} {
+    flex-direction: row;
+  }
+`;
