@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const SidebarContainer = styled.div`
     position: fixed;
     top: 30%;
-    left: 0;    
-    padding: 5px 15px 5px 5px;
-    border-radius: 0px 20px 20px 0px;
-    background-color: rgba(0,0,0,0.4);
+    right: 0px;    
+    padding: 5px 10px 5px 15px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: rgba(0,0,0,0.5);
     z-index: 10;    
 `;
 
@@ -42,12 +42,12 @@ export const Icon = styled(FontAwesomeIcon)`
 
 const visible = css`
     opacity: 100%;    
-    transform: translateX(30px);
+    transform: translateX(-235px);
 `;
 
 const hidden = css`
     opacity: 0%;
-    transform: translateX(10px);
+    transform: translateX(-220px);
 `;
 
 const setVisibility = ({ visibility }) => {
@@ -58,12 +58,11 @@ export const Contact = styled.p`
     position: absolute;
     width: 220px;
     top: 50%
-    left: 0;
-    margin-left: 10px;
+    right: 0;
     padding: 2px 10px;
     color: white;
     background-color: rgba(0,0,0,0.3);
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 20px 0px 0px 20px;
     transition: all 1s;
     ${setVisibility};
     
