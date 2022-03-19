@@ -43,8 +43,9 @@ export const ProjectCardContainer = styled.a`
   height: 280px;
   padding: 15px 30px;
   text-decoration: none;
-  ${applyColorTheme};
   transition: transform 0.5s;
+  box-shadow: 2px 2px 10px black;
+  ${applyColorTheme};
 
   &:hover {
     transform: scale(1.05);

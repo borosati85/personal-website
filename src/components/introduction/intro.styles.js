@@ -2,26 +2,26 @@ import styled, { css } from "styled-components";
 import { device } from "../../common/breakpoints";
 
 const lightModeColorStyles = css`
-  background-color: #fffffe;
-
   h1,
   h2 {
-    color: #094067;
+    color: #fffffe;
   }
 
   p {
-    color: #5f6c7b;
+    color: #94a1b2;
   }
 
   button {
     background-color: #3da9fc;
     color: #fffffe;
   }
+
+  video {
+    filter: brightness(70%);
+  }
 `;
 
 const darkModeColorStyles = css`
-  background-color: #16161a;
-
   h1,
   h2 {
     color: #fffffe;
@@ -35,6 +35,10 @@ const darkModeColorStyles = css`
     background-color: #7f5af0;
     color: #fffffe;
   }
+
+  video {
+    filter: brightness(25%);
+  }
 `;
 
 const applyColorTheme = ({ darkMode }) => {
@@ -46,6 +50,15 @@ export const IntroductionContainer = styled.div`
   position: relative;
   ${applyColorTheme};
 `;
+
+export const VideoContainer = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;  
+`
 
 export const IntroWrapper = styled.div`
   position: absolute;
@@ -92,6 +105,8 @@ export const IntroMainHeading = styled.h1`
 
 export const IntroDescription = styled.p`
   font-size: 15px;
+  max-width: 450px;
+  text-align: justify;
 
   @media only screen and ${device.sm} {
     font-size: 20px;

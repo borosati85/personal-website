@@ -9,7 +9,7 @@ const lightModeColorStyles = css`
 
   h1,
   h2 {
-    color: #094067;
+    color: #3da9fc;
   }
 
   p {
@@ -44,7 +44,11 @@ const darkModeColorStyles = css`
 
   input,
   textarea {
-    background-color: #16161a;
+    background-color: #16161a;    
+  }
+
+  label {
+    color: #fffffe;
   }
 `;
 

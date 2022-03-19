@@ -46,7 +46,7 @@ const About = () => {
       setAboutVisibility(1);
     }
 
-    if (!skillsVisibility && window.innerHeight * 0.4 >= skillsPosition) {
+    if (!skillsVisibility && window.innerHeight * 0.45 >= skillsPosition) {
       setSkillsVisibility(1);
     }
 
