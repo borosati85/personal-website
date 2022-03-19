@@ -15,6 +15,11 @@ const lightModeColorStyles = css`
   p {
     color: #5f6c7b;
   }
+  
+  input,
+  textarea {
+    background-color: transparent;    
+  }
 
   button {
     background-color: #3da9fc;
@@ -44,7 +49,7 @@ const darkModeColorStyles = css`
 
   input,
   textarea {
-    background-color: #16161a;    
+    background-color: transparent;    
   }
 
   label {
@@ -77,7 +82,8 @@ const FadeDownAnimation = css`
 `;
 
 export const ContactContainer = styled.div`
-  min-height: 100vh;
+  position: relative;
+  min-height: 100vh;  
   ${applyColorTheme}
 `;
 
@@ -86,11 +92,7 @@ export const ContactWrapper = styled.div`
   height: 100%;
   ${setVisibility};
   ${FadeDownAnimation};
-  padding: 50px 2%;
-
-  @media only screen and ${device.lg} {
-    padding: 50px 10%;
-  }
+  padding: 50px 10%;
 
   @media only screen and ${device.xl} {
     padding: 50px 20%;
@@ -145,3 +147,15 @@ export const ContactFromAddressInput = styled.div`
     flex-direction: row;
   }
 `;
+
+export const BackgroundContainer = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 45%;
+`;
+
+export const BackgroundImage = styled.img`
+  width: 500px;
+  height: auto;
+  opacity: 0.1;  
+`

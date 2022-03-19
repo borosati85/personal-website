@@ -48,9 +48,9 @@ export const AboutWrapper = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 15%;
-  padding: 50px 2%;
+  padding: 50px 35px;
 
-  @media only screen and ${device.lg} {
+  @media only screen and ${device.sm} {
     padding: 50px 10%;
   }
 

@@ -64,9 +64,9 @@ export const IntroWrapper = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 2%;
+  padding: 0 35px;
 
-  @media only screen and ${device.lg} {
+  @media only screen and ${device.sm} {
     padding: 0 10%;
   }
 
@@ -76,12 +76,13 @@ export const IntroWrapper = styled.div`
 `;
 
 export const IntroSubHeading = styled.h2`
-  font-size: 30px;
+  max-width: 100%;
+  font-size: 23px;
   font-weight: 400;
   margin: 0;
 
   @media only screen and ${device.xs} {
-    font-size: 35px;
+    font-size: 26px;
   }
 
   @media only screen and ${device.sm} {
@@ -94,6 +95,7 @@ export const IntroSubHeading = styled.h2`
 `;
 
 export const IntroMainHeading = styled.h1`
+  max-width: 100%;
   font-size: 50px;
   font-weight: 400;
   margin: 0;
@@ -104,21 +106,37 @@ export const IntroMainHeading = styled.h1`
 `;
 
 export const IntroDescription = styled.p`
+  max-width: 100%;
   font-size: 15px;
   max-width: 450px;
   text-align: justify;
 
+  @media only screen and ${device.xs} {
+    font-size: 15px;
+  }
+
   @media only screen and ${device.sm} {
-    font-size: 20px;
+    font-size: 15px;
   }
 `;
 export const ButtonContainer = styled.div`
+  max-width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
 
   @media only screen and ${device.sm} {
     justify-content: flex-start;
+    flex-direction: row;
     gap: 20px;
+  }
+
+  button {
+    width: 100%;
+
+    @media only screen and ${device.sm} {
+      width: 150px;
+    }
   }
 `;

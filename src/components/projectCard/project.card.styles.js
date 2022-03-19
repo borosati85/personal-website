@@ -40,7 +40,7 @@ const applyColorTheme = ({ darkMode }) => {
 };
 
 export const ProjectCardContainer = styled.a`
-  height: 280px;
+  height: 300px;
   padding: 15px 30px;
   text-decoration: none;
   transition: transform 0.5s;
@@ -78,14 +78,12 @@ export const ProjectCardDescription = styled.p`
 
 export const ProjectCardTechnologiesContainer = styled.div`
   margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const ProjectCardTechnology = styled.code`
   font-size: 12px;
-  margin: 0px 5px;
+  margin: 5px;
   padding: 5px;
-
-  &:first-of-type {
-    margin-left: 0px;
-  }
 `;

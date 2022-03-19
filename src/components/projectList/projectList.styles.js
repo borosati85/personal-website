@@ -5,13 +5,7 @@ const setVisibility = ({ visibility }) =>
   visibility ? "display: block" : null;
 
 const lightModeColorStyles = css`
-  background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   background-color: rgba(230,230,230,0.7);
-  background-blend-mode: overlay;
 
   h2 {
     color: #3da9fc;
@@ -27,14 +21,7 @@ const lightModeColorStyles = css`
 `;
 
 const darkModeColorStyles = css`
-  background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   background-color: rgba(0,0,0,0.7);
-  background-blend-mode: overlay;
-
 
   h2 {
     color: #7f5af0;
@@ -76,6 +63,12 @@ const FadeDownAnimation = css`
 export const ProjectListContainer = styled.div`
   padding: 50px 0px;
   min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: overlay;
   ${applyColorTheme}
 `;
 
@@ -84,9 +77,9 @@ export const ProjectListWrapper = styled.div`
   ${setVisibility};
   ${FadeDownAnimation};
 
-  padding: 0 2%;
+  padding: 0 35px;
 
-  @media only screen and ${device.lg} {
+  @media only screen and ${device.sm} {
     padding: 0 10%;
   }
 
@@ -114,5 +107,13 @@ export const ListContainer = styled.div`
   display: grid;
   justify-content: center;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @media only screen and ${device.xs} {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  @media only screen and ${device.sm} {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 `;

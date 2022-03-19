@@ -5,18 +5,9 @@ import React, {
   useRef,
   useContext
 } from "react";
-import Phone from "../../img/phone.png";
-import Email from "../../img/email.png";
 import emailjs from "@emailjs/browser";
-import {
-  ContactContainer,
-  ContactWrapper,
-  ContactTitle,
-  ContactSubTitle,
-  ContactDescription,
-  ContactForm,
-  ContactFromAddressInput
-} from "./contact.styles";
+import email from "../../img/email.png"
+import { ContactContainer, ContactWrapper, ContactTitle, ContactSubTitle, ContactDescription, ContactForm, ContactFromAddressInput, BackgroundContainer, BackgroundImage } from "./contact.styles";
 import CustomInput from "../customInput/CustomInput.component";
 import CustomButton from "../customButton/CustomButton.component";
 import { ThemeContext } from "../../context";
@@ -67,6 +58,9 @@ const Contact = () => {
 
   return (
     <ContactContainer ref={contactRef} id="contact" darkMode={darkMode}>
+      <BackgroundContainer>
+        <BackgroundImage src={email} alt=''/>
+      </BackgroundContainer>
       <ContactWrapper visibility={contactVisibility}>
         <ContactDescription>
           <ContactTitle>CONTACT</ContactTitle>

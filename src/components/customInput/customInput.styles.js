@@ -29,7 +29,6 @@ const commonLabelStyles = css`
 `
 
 const darkModeStyles = css`
-    background-color: #333;
     color: #DDD;
 `
 
