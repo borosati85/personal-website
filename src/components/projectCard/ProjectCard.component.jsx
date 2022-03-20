@@ -1,7 +1,10 @@
 import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context';
-import { ProjectCardContainer, ProjectCardWrapper, ProjectCardTitle, ProjectCardDescription, ProjectCardTechnologiesContainer, ProjectCardTechnology } from './project.card.styles';
+import { ProjectCardContainer, ProjectCardWrapper, ProjectCardTitle, ProjectCardDescription, ProjectCardTechnologiesContainer, ProjectCardTechnology, IconContainer } from './project.card.styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectCard = ({ title, description, technologies, url }) => {
 
@@ -9,9 +12,15 @@ const ProjectCard = ({ title, description, technologies, url }) => {
     const darkMode = theme.state.darkMode;
 
     return (
-        <ProjectCardContainer darkMode={darkMode} href={url} target='_blank' rel='noreferrer'>
+        <ProjectCardContainer darkMode={darkMode}>
             <ProjectCardWrapper>
-                <ProjectCardTitle>{title}</ProjectCardTitle>
+                <ProjectCardTitle>
+                    {title}
+                    <IconContainer>
+                        <a href={url} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faGithub}/></a>
+                        <a href={url} target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faArrowUpRightFromSquare}/></a>
+                    </IconContainer>
+                </ProjectCardTitle>
                 <ProjectCardDescription>{description}</ProjectCardDescription>
                 <ProjectCardTechnologiesContainer>
                     {technologies.map((item, idx) => <ProjectCardTechnology key={idx}>{item}</ProjectCardTechnology>)}
