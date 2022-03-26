@@ -5,7 +5,7 @@ const setVisibility = ({ visibility }) =>
   visibility ? "display: block" : null;
 
 const lightModeColorStyles = css`
-  background-color: rgba(230,230,230,0.7);
+  background-color: rgba(230, 230, 230, 0.7);
 
   h2 {
     color: #3da9fc;
@@ -21,7 +21,7 @@ const lightModeColorStyles = css`
 `;
 
 const darkModeColorStyles = css`
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 
   h2 {
     color: #7f5af0;
@@ -63,7 +63,7 @@ const FadeDownAnimation = css`
 export const ProjectListContainer = styled.div`
   padding: 50px 0px;
   min-height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
+  background-image: url("https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80");
   background-position: right center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -104,16 +104,8 @@ export const ProjectListSubTitle = styled.h3`
 
 export const ListContainer = styled.div`
   width: 100%;
-  display: grid;
-  justify-content: center;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-  @media only screen and ${device.xs} {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
-
-  @media only screen and ${device.sm} {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
 `;
