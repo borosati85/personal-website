@@ -7,7 +7,7 @@ import { ThemeContext } from "../../context";
 
 const Toggle = () => {
 
-    const [position, setPosition] = useState('right');
+    const [position, setPosition] = useState('left');
     const theme = useContext(ThemeContext);
 
     const handleClick = () => {

@@ -22,9 +22,9 @@ const ProjectCard = ({ title, description, technologies, url, pic }) => {
 
   return (
     <ProjectCardContainer darkMode={darkMode}>
+      {/*<Background darkMode={darkMode} />
       <Background darkMode={darkMode} />
-      <Background darkMode={darkMode} />
-      <ProjectCardImage src={pic} />
+  <ProjectCardImage src={pic} />*/}
       <ProjectCardWrapper>
         <ProjectCardTitle>
           {title}

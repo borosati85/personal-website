@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext } from "react";
 import {
   IntroductionContainer,
   IntroWrapper,
@@ -11,22 +11,16 @@ import {
 import CustomButton from "../customButton/CustomButton.component";
 import AnimatedWrapper from "../animated/AnimatedWrapper";
 import { ThemeContext } from "../../context";
-import bgVideo from '../../video/bg-vid.mp4'
+import backgroundVideo from '../../video/bg-vid.mp4'
 
 const Introduction = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
-  const vid = useRef();
-
-  useEffect(() => {
-    vid.current.play();
-  },[])
-
   return (
     <IntroductionContainer id="home" darkMode={darkMode}>
-      <VideoContainer autoplay muted loop ref={vid}>
-        <source src={bgVideo} type="video/mp4"/>
+      <VideoContainer autoPlay muted loop>
+        <source src={backgroundVideo} type="video/mp4"/>
       </VideoContainer>
       <IntroWrapper>
         <IntroSubHeading>

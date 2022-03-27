@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useContext
 } from "react";
-import SkillIcons from "../skillicons/SkillIcons.component";
+import SkillIconList from "../skilliconList/SkillIconList.component";
 import {
   AboutContainer,
   AboutWrapper,
@@ -86,7 +86,7 @@ const About = () => {
           <AboutSubTitle visibility={skillsVisibility}>
             The tools and technologies I use to bring ideas to life
           </AboutSubTitle>
-          <SkillIcons visibility={skillsVisibility} />
+          <SkillIconList visibility={skillsVisibility} />
         </SkillsContainer>
       </AboutWrapper>
     </AboutContainer>
