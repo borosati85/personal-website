@@ -11,15 +11,6 @@ const lightModeColorStyles = css`
     color: #94a1b2;
   }
 
-  button {
-    background-color: #3da9fc;
-    color: #fffffe;
-
-    &:hover {
-      background-color: #1f74ff
-    }
-  }
-
   video {
     filter: brightness(70%);
   }
@@ -33,15 +24,6 @@ const darkModeColorStyles = css`
 
   p {
     color: #94a1b2;
-  }
-
-  button {
-    background-color: #7f5af0;
-    color: #fffffe;
-
-    &:hover {
-      background-color: #7753d4;
-    }
   }
 
   video {

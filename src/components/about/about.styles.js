@@ -59,8 +59,9 @@ export const AboutWrapper = styled.div`
   }
 `;
 
-export const AboutTextContainer = styled.div``;
-export const SkillsContainer = styled.div``;
+export const SkillsContainer = styled.div`
+  margin-top: 50px;
+`;
 
 const setVisibility = ({ visibility }) =>
   visibility ? "display: block" : null;
@@ -107,4 +108,10 @@ export const AboutText = styled.p`
   line-height: 30px;
   ${setVisibility};
   ${FadeDownAnimation};
+`;
+
+export const AboutTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 `;

@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-const ProjectCard = ({ title, description, technologies, url, pic }) => {
+const ProjectCard = ({ title, description, technologies, url, githubUrl, pic }) => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -29,7 +29,7 @@ const ProjectCard = ({ title, description, technologies, url, pic }) => {
         <ProjectCardTitle>
           {title}
           <IconContainer>
-            <a href={url} target="_blank" rel="noreferrer">
+            <a href={githubUrl} target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a href={url} target="_blank" rel="noreferrer">

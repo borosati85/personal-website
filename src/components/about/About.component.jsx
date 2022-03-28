@@ -6,6 +6,8 @@ import React, {
   useContext
 } from "react";
 import SkillIconList from "../skilliconList/SkillIconList.component";
+import CustomButton from '../customButton/CustomButton.component';
+import profilePic from '../../img/profile.jpg';
 import {
   AboutContainer,
   AboutWrapper,
@@ -68,18 +70,16 @@ const About = () => {
             A little bit about myself, if you'd like to get to know me
           </AboutSubTitle>
           <AboutText visibility={aboutVisibility}>
-            I'm a self taught web developer, I believe in life long learning and
-            continous improvement, that's why I started learing to code a few
-            years ago. I enjoy solving complex problems by breaking it down into
-            smaller parts, and solving them one by one. I love creating things
-            on the web, be it a website, a webshop, an app, or anything, I
-            always give my 100% in it. I like facing challenges, I think that is
-            what makes us better in the long run. A challenge today will be a
-            routine task tomorrow. I can, and I like work alone, but I can be a
-            part of any team. I have my own ideas, but I'm always respect
-            others, and always open to discussions. My goal is the create the
-            best product possible.{" "}
+            I'm a self taught web developer, who is looking to make the career change to the IT Industry. I believe in life long learning and
+            continous improvement, that's why I started learing to code a few years ago, as it was my childhood dream.            
+            I have an optimistic and positive personality, that helped me to keep going on this path.
+            I enjoy solving complex problems by breaking it down into smaller parts, and solving them one by one.             
+            I like facing challenges, I think that is what makes us better in the long run. I can, and I like work alone, but I can be a
+            part of any team as I worked in team in the past 10+ years, and also kept the contact with clients and other departments.
+            I have my own ideas, but I'm always respect others, and always open to discussions. My goal is the create the
+            best product possible, and improve myself every day.
           </AboutText>
+          <CustomButton href='https://resume.io/r/QDNFLMUTs' darkMode={darkMode}>Download CV</CustomButton>
         </AboutTextContainer>
         <SkillsContainer ref={skillsRef}>
           <AboutTitle visibility={skillsVisibility}>SKILLS</AboutTitle>

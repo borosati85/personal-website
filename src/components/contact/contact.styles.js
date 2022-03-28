@@ -151,13 +151,14 @@ export const ContactFromAddressInput = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
+  max-width: 500px;
   position: absolute;
   top: 40%;
   left: 45%;
 `;
 
 export const BackgroundImage = styled.img`
-  width: 500px;
+  width: 100%;
   height: auto;
   opacity: 0.1;  
 `

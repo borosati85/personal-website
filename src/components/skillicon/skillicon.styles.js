@@ -80,9 +80,10 @@ export const Icon = styled.div`
   transition: all 0.2s;
   ${applyColorTheme};
   ${playAnimation};
+  cursor: pointer;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.05);    
   }
 `;
 

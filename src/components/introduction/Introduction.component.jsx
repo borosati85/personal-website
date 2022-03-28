@@ -43,10 +43,10 @@ const Introduction = () => {
         </IntroDescription>
         <ButtonContainer>
           <AnimatedWrapper>
-            <CustomButton href="#projects">View my Work</CustomButton>
+            <CustomButton darkMode={darkMode} href="#projects">View my Work</CustomButton>
           </AnimatedWrapper>
           <AnimatedWrapper>
-            <CustomButton href="#contact">Contact me</CustomButton>
+            <CustomButton darkMode={darkMode} href="#contact">Contact me</CustomButton>
           </AnimatedWrapper>
         </ButtonContainer>
       </IntroWrapper>
