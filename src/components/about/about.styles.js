@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import CustomButton from '../customButton/CustomButton.component';
 import { device } from "../../common/breakpoints";
 
 const lightModeColorStyles = css`
@@ -64,7 +65,7 @@ export const SkillsContainer = styled.div`
 `;
 
 const setVisibility = ({ visibility }) =>
-  visibility ? "display: block" : null;
+  visibility ? "display: flex" : null;
 
 const FadeDownKeyframes = keyframes`
 0% {
@@ -111,7 +112,15 @@ export const AboutText = styled.p`
 `;
 
 export const AboutTextContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  a {
+    display: none;
+    ${setVisibility};
+    ${FadeDownAnimation};
+  }
+
 `;
+
+

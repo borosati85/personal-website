@@ -15,9 +15,14 @@ const darkModeColorStyles = css`
     }
 `;
 
+export const CustomButtonContainerLink = styled.a``;
+
 const applyColorTheme = ({ darkMode }) => {
     return darkMode ? darkModeColorStyles : lightModeColorStyles;
   };
+
+const setVisibility = ({ visibility }) =>
+  visibility ? "display: flex" : null;
 
 export const CustomButtonContainer = styled.button`
     color: #fffffe;
@@ -28,6 +33,7 @@ export const CustomButtonContainer = styled.button`
     cursor: pointer;
     padding: 10px;
     ${applyColorTheme};
+    ${setVisibility};
 
     a {
         text-decoration: none;

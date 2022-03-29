@@ -32,7 +32,7 @@ export const SkillIconsContainer = styled.div`
 export const SkillIconsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
 
   @media only screen and ${device.sm} {

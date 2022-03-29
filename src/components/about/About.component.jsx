@@ -6,8 +6,7 @@ import React, {
   useContext
 } from "react";
 import SkillIconList from "../skilliconList/SkillIconList.component";
-import CustomButton from '../customButton/CustomButton.component';
-import profilePic from '../../img/profile.jpg';
+import CustomButton from "../customButton/CustomButton.component";
 import {
   AboutContainer,
   AboutWrapper,
@@ -64,7 +63,7 @@ const About = () => {
   return (
     <AboutContainer id="about" darkMode={darkMode}>
       <AboutWrapper>
-        <AboutTextContainer ref={aboutRef}>
+        <AboutTextContainer visibility={aboutVisibility} ref={aboutRef}>
           <AboutTitle visibility={aboutVisibility}>ABOUT</AboutTitle>
           <AboutSubTitle visibility={aboutVisibility}>
             A little bit about myself, if you'd like to get to know me
@@ -77,9 +76,9 @@ const About = () => {
             I like facing challenges, I think that is what makes us better in the long run. I can, and I like work alone, but I can be a
             part of any team as I worked in team in the past 10+ years, and also kept the contact with clients and other departments.
             I have my own ideas, but I'm always respect others, and always open to discussions. My goal is the create the
-            best product possible, and improve myself every day.
+            best product possible, and improve myself every day.            
           </AboutText>
-          <CustomButton href='https://resume.io/r/QDNFLMUTs' darkMode={darkMode}>Download CV</CustomButton>
+          <CustomButton visibility={aboutVisibility} href='https://resume.io/r/QDNFLMUTs' darkMode={darkMode}>Download CV</CustomButton>
         </AboutTextContainer>
         <SkillsContainer ref={skillsRef}>
           <AboutTitle visibility={skillsVisibility}>SKILLS</AboutTitle>

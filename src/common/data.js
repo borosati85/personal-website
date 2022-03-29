@@ -82,6 +82,7 @@ const skills = [
     pic: redux,
     animation: 'jello'
   },
+/*  
   {
     name: 'TypeScript',
     pic: typescript,
@@ -92,6 +93,7 @@ const skills = [
     pic: node,
     animation: 'jello'
   },
+*/
   {
     name: 'Firebase',
     pic: firebase,
