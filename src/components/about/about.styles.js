@@ -117,6 +117,7 @@ export const AboutTextContainer = styled.div`
   align-items: flex-start;
   a {
     display: none;
+    text-decoration: none;
     ${setVisibility};
     ${FadeDownAnimation};
   }

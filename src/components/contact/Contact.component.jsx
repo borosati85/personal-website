@@ -171,8 +171,7 @@ const Contact = () => {
         <ContactDescription>
           <ContactTitle>CONTACT</ContactTitle>
           <ContactSubTitle>
-            I am available to work on your projects and bring your ideas to
-            life. I am just a click away.
+          Got a question or proposal, or just want to say hello? Send me a message.
           </ContactSubTitle>
         </ContactDescription>
         <ContactForm ref={formRef} onSubmit={handleSubmit}>

@@ -16,6 +16,7 @@ import {
   AboutSubTitle,
   AboutText
 } from "./about.styles";
+import CV from '../../assets/CV.pdf';
 import { ThemeContext } from "../../context";
 
 const About = () => {
@@ -69,16 +70,12 @@ const About = () => {
             A little bit about myself, if you'd like to get to know me
           </AboutSubTitle>
           <AboutText visibility={aboutVisibility}>
-            I'm a self taught web developer, who is looking to make the career change to the IT Industry. I believe in life long learning and
-            continous improvement, that's why I started learing to code a few years ago, as it was my childhood dream.            
-            I have an optimistic and positive personality, that helped me to keep going on this path.
-            I enjoy solving complex problems by breaking it down into smaller parts, and solving them one by one.             
-            I like facing challenges, I think that is what makes us better in the long run. I can, and I like work alone, but I can be a
-            part of any team as I worked in team in the past 10+ years, and also kept the contact with clients and other departments.
-            I have my own ideas, but I'm always respect others, and always open to discussions. My goal is the create the
-            best product possible, and improve myself every day.            
+            Self taught web developer, life long learner, with growth mindset and positive thinking. 
+            Eager to contribute to team success through hard work, attention to detail and excellent technical and problem solving skills.
+            Likes challanges and solving complex problems by breaking them down to smaller parts and finding the best solutions.
+            Motivated to learn, grow and excel in IT.             
           </AboutText>
-          <CustomButton visibility={aboutVisibility} href='https://resume.io/r/QDNFLMUTs' darkMode={darkMode}>Download CV</CustomButton>
+          <CustomButton visibility={aboutVisibility} target='_blank' href={CV} darkMode={darkMode}>Download CV</CustomButton>
         </AboutTextContainer>
         <SkillsContainer ref={skillsRef}>
           <AboutTitle visibility={skillsVisibility}>SKILLS</AboutTitle>
